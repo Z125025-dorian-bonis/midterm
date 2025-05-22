@@ -1,1 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <script src="https://unpkg.com/starback@2.1.1/dist/starback.global.js"></script>
+    <script src="scripts/script.js" defer></script>
+</head>
+<body>
+    <header class="header">
+        <a href="#hero" class="portfolio">BONIS <em>Dodie</em></a>
+        <i class='bx bx-menu' id="menu-icon"></i>
+        <nav class="navbar">
+            <button id="theme-switch">
+                <i class='bx bxs-moon'></i>
+                <i class='bx bxs-sun'></i>
+            </button>
+            <a href="#hero" class="active">Home</a>
+            <a href="#aboutme">About me</a>
+            <a href="#projects">Projects</a>
+            <a href="#art">Art</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+    <div class="nav-bg"></div>
+    <main>
+
+        <canvas id="canvas"></canvas>
+
+        <section>
+            <div class="hero clip" id="hero">
+                <img src="images/backmain.png" alt="mountains and sky picture" class="back" id="mainback">
+                <img src="images/mountains.png" alt ="just mountains picture" class="back" id="mountainsback">
+                <img src="images/moon.png" alt="moon picture" class="back" id="moonback">
+                <img src="images/profilepic.jpg" alt="picture-of-my-face" class="animappear face">
+                <div class="herotext">
+                    <h1 class="animappear" id="message"></h1>
+                    <h2 class="animappear content">I'm <em>Dodie</em>, a <span class="textanim" id="typewriter">Game Designer</span></h2>
+                    <p class="animappear">I hope you'll have a good time getting to know me!</p>
+                    <a href="#aboutme" class="button animappear">Who am I?</a>
+                    <noscript><h2>Javascript is disabled in your browser. Your user experience of this website will be impacted by this.</h2></noscript>  
+                </div>
+            </div>
+        </section> 
+
+        <section>
+            <div class="wrappersec"><h1 class="sectitle">About me</h1></div>
+            <div class="separator">
+                <img src="images/planet.png" alt="icon of a ringed planet" id="ringedplanet" class="iconspace">
+            </div>
+            <div class="aboutme view" id="aboutme">
+                
+                <div class="card appear">
+                    <div class="icon mobicon"><i class='mobbx bx bxs-user-pin'></i></div>
+                    <h2 class="title">Profile</h2>
+                    <p class="mobtext text">I'm <em>Dodie Bonis</em>, my username on <a href="https://linktr.ee/dodieisshining">Social Media</a> and <a href="https://github.com/DodieIsShining">Github</a> is <em>DodieIsShining</em>. I am <em>18</em>. My pronouns are <em>she/her</em>.</p>
+                </div>
+
+                <div class="card appear">
+                    <div class="icon mobicon"><i class='mobbx bx bx-world'></i></div>    
+                    <h2 class="title">Languages</h2>
+                    <p class="mobtext text"><em>French</em> is my first language but I speak <em>English</em> fluently. I also know a bit of <em>Spanish</em> and <em>Japanese</em>.</p>
+                </div>
+
+                <div class="card appear">
+                    <div class="icon mobicon"><i class='mobbx bx bxs-graduation' ></i></div>
+                    <h2 class="title">Studies</h2>
+                    <p class="mobtext text">I study at <em>EPITA Strasbourg</em> <i><b>(France)</b></i>, a computer engineer school, but currently I'm at the <em>Shibaura Institute of Technology</em> <i><b>(Japan)</b></i>.</p>
+                </div>
+
+                <div class="card appear">
+                    <div class="mobicon icon"><i class='mobbx bx bxs-invader'></i></div>
+                    <h2 class="title">Interests</h2>
+                    <p class="mobtext text">I'm a big fan of <em>indie videogames</em> and I'm a competitive <em>Minecraft</em> player. I play <em>volleyball</em> and <em>D&D</em>. I love <em>cooking</em>, <em>baking</em> and I also enjoy creating <em>pixel art</em>.</p>
+                </div>
+
+                <div class="card appear">
+                    <div class="mobicon icon"><i class='mobbx bx bx-code-alt' ></i></div>
+                    <h2 class="title">Coding</h2>
+                    <p class="mobtext text">I can code in <em>C</em>, <em>Python</em>, <br><em>C#</em>, <em>C++</em>, <em>HTML</em>, <em>CSS</em> <em>JavaScript</em> and <em>OCaml</em>.</p>
+                </div>
+
+                <div class="card appear">
+                    <div class="icon mobicon"><i class='mobbx bx bxs-message-dots'></i></div>
+                    <h2 class="title">Fun fact</h2>
+                    <p class="mobtext text">Here is a <em>fun fact</em> about me: <br>As a <em>kid</em>, I accidentally spent around <em>30.000</em> euros on a mobile game.</p>
+                </div>
+            </div>
+
+            <div class="separator">
+                <img src="images/galaxy.png" alt="icon of a galaxy" id="galaxy" class="iconspace">
+            </div>
+        </section>
+
+        <section>
+            <div class="wrappersec" id="projsec"><h1 class="sectitle">Projects</h1></div>
+            <div class="projects" id="projects">
+                <div class="wrapper">
+                    <i id="left" class='arrow'><</i> 
+                    <ul class="carousel">
+                        <li class="card">
+                            <div class="img"><img src="images/art3.png" alt="power on logo" draggable="false"></div>
+                            <h2>Power ON</h2>
+                            <span>This story driven game project started in 2022. This project was made on Unity (C#) by a team of 4 people. I worked on this project as a Game Developer and Game Designer.R</span>
+                        </li>
+                        <li class="card">
+                            <div class="img"><img src="images/NDOT.png" alt="new dog old tricks logo" draggable="false"></div>
+                            <h2>New Dog Old Tricks</h2>
+                            <span>This puzzle game made on Unity (C#) was made in less than one year as a school project. We were a team of 5 and I was a Game Developer and the Puzzle/Level Designer.</span>
+                        </li>
+                        <li class="card">
+                            <div class="img"><img src="images/N2I.png" alt="nuit de l'info logo" draggable="false"></div>
+                            <h2>"Nuit 2 l'Info"</h2>
+                            <span>As a team of 5, we had to create a Web Application in one night. As the main Web Developer, I took care of the HTML, JavaScript, PHP and part of the CSS.</span>
+                        </li>
+                        <li class="card">
+                            <div class="img"><img src="images/OCR.png" alt="OCR logo" draggable="false"></div>
+                            <h2>OCR</h2>
+                            <span>This second school project was an Optical Recognition Program. In six months, the 4 of us had to create a program that could solve a wordsearch puzzle by giving it the puzzle's image.</span>
+                        </li>
+                        <li class="card">
+                            <div class="img"><img src="images/CopyPaste.png" alt="CopyPaste logo" draggable="false"></div>
+                            <h2>CopyPaste</h2>
+                            <span>This metroidvania game was made during a 2 days long Game Jam. I was the Project Manager as well as a Developer of our team of 5.</span>
+                        </li>
+                    </ul> 
+                    <i id="right" class="arrow">></i>
+                </div>
+            </div>
+            <div class="separator">
+                <img src="images/zodiac.png" alt="icon of a zodiac / constellation" id="zodiac" class="iconspace">
+            </div>
+        </section>
+
+        <section>
+            <div class="wrappersec"><h1 class="sectitle">Pixel Art</h1></div>
+            <div class="separator">
+                <img src="images/planet-earth.png" alt="icon of the Earth" id="earth" class="iconspace">
+            </div>
+            <div class="art" id="art">
+                <div class="container">
+                    <div class="card__container">
+                        <article class="card__article" id="art1">
+                            <img src="images/art1.png" alt="isometric-playground" class="card__img">
+                        
+                            <div class="card__data">
+                                <span class="card__description">Small exercise on <em>isometric</em> pixel art.</span>
+                                <h2 class="card__title"><time datetime="2021-11">2021/11</time></h2>
+                            </div>
+                        </article>
+                        
+                        <article class="card__article" id="art2">
+                            <img src="images/art2.png" alt="isometric-building" class="card__img">
+                        
+                            <div class="card__data">
+                                <span class="card__description">Another exercise on <em>isometric</em> pixel art.</span>
+                                <h2 class="card__title"><time datetime="2021-12">2021/12</time></h2>
+                            </div>
+                        </article>
+
+                        <article class="card__article" id="art3">
+                            <img src="images/art3.png" alt="power-on-icon" class="card__img">
+                        
+                            <div class="card__data">
+                                <span class="card__description">Design of the icon of <a href="#games"><em>Power On</em></a>.</span>
+                                <h2 class="card__title"><time datetime="2022-01">2022/01</time></h2>
+                            </div>
+                        </article>
+
+                        <article class="card__article" id="art4">
+                            <img src="images/art4.png" alt="logo-shinyduck-studio" class="card__img">
+                        
+                            <div class="card__data">
+                                <span class="card__description">Design of the logo of <a href="#games"><em>ShinyDuck Studio</em></a>.</span>
+                                <h2 class="card__title"><time datetime="2022-01">2022/01</time></h2>
+                            </div>
+                        </article>
+
+                        <article class="card__article bigcard" id="art5">
+                            <img src="images/art5.png" alt="frame-of-power-on-gameplay" class="card__img">
+                        
+                            <div class="card__data">
+                                <span class="card__description">First visuals of <a href="#games"><em>Power On</em></a>.</span>
+                                <h2 class="card__title"><time datetime="2022-03">2022/03</time></h2>
+                            </div>
+                        </article>
+
+                        <article class="card__article" id="art6">
+                            <img src="images/art6.png" alt="new-dog-old-tricks-menu" class="card__img">
+                        
+                            <div class="card__data">
+                                <span class="card__description">Menu of <a href="#games"><em>New Dog Old Tricks</em></a>.</span>
+                                <h2 class="card__title"><time datetime="2023-12">2023/12</time></h2>
+                            </div>
+                        </article>
+
+                        <article class="card__article bigcard" id="art7">
+                            <img src="images/art7.png" alt="new-dog-old-tricks-level" class="card__img">
+                        
+                            <div class="card__data">
+                                <span class="card__description">First visuals of a finished level of <a href="#games"><em>New Dog Old Tricks</em></a>.</span>
+                                <h2 class="card__title"><time datetime="2024-02">2024/02</time></h2>
+                            </div>
+                        </article>
+
+                        <article class="card__article bigcard" id="art8">
+                            <img src="images/art8.png" alt="new-dog-old-tricks-cutscene" class="card__img">
+                        
+                            <div class="card__data">
+                                <span class="card__description">One frame of a cutscene from <a href="#games"><em>New Dog Old Tricks</em></a>.</span>
+                                <h2 class="card__title"><time datetime="2024-05">2024/05</time></h2>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </div>
+            <div class="separator">
+                <img src="images/saturn.png" alt="icon of Saturn" id="saturn" class="iconspace">
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="contact" id="contact">
+        </div>
+        <a href="https://www.flaticon.com/free-icons/planet" title="planet icons" class="source">Planet icons created by Freepik - Flaticon</a>
+    </footer>
+</body>
+</html>
+
 
