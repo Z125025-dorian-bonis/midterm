@@ -3,11 +3,13 @@
     --dark: #100714;
     --accent1: #eb38fc;
     --accent2: #ff9c1b;
+    --secondarylight: #ccbd9b;
+    --secondarydark: #0a030d;
 
     --small-font-size: 13px;
-    --medium-font-size:1.3rem;
-    --large-font-size: 2.3rem;
-    --very-large-font-size: 3.3rem;
+    --medium-font-size:2.1rem;
+    --large-font-size: 3.9rem;
+    --very-large-font-size: 5.2rem;
 }
 
 .darkmode{
@@ -15,6 +17,8 @@
     --dark: #e6d8b9;
     --accent1: #eb38fc;
     --accent2: #ff9c1b;
+    --secondarylight: #0a030d;
+    --secondarydark: #ccbd9b;
 }
 
 *{
@@ -23,6 +27,10 @@
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
     
+}
+
+html{
+    font-size: 60%;
 }
 
 a{
@@ -137,6 +145,26 @@ body {
     display: none;
 }
 
+.btn{
+    margin-top: 32px;
+    padding: 15px 80px;
+    font-size: var(--medium-font-size);
+    display: inline-block;
+    text-decoration: none;
+    color: var(--dark);
+    background: var(--accent1);
+    border-radius: 30px;
+    border:none;
+    cursor: pointer;
+    box-shadow: 0 0 25px var(--accent1);
+    transition: 0.3s ease-in-out;
+}
+
+.btn:hover{
+    border-radius: 20px;
+    text-shadow: 0 0 25px var(--dark);
+}
+
 .hero{
     position: relative;
     width:100%;
@@ -213,6 +241,7 @@ body {
 }
 
 .herotext h1{
+    text-shadow: 0 0 25px var(--accent2);
     font-size: var(--very-large-font-size);
     margin-bottom: 12px;
     color: var(--accent2);
@@ -230,25 +259,6 @@ body {
     margin-bottom: 12px;
     color: #e6d8b9;
     animation-delay: 0.5s;
-}
-
-.herotext .button{
-    margin-top: 32px;
-    padding: 15px 80px;
-    font-size: 16px;
-    display: inline-block;
-    text-decoration: none;
-    color: var(--light);
-    background-image: linear-gradient(45deg, var(--accent1), var(--accent2));
-    border-radius: 30px;
-    border-top-right-radius: 0;
-    border:none;
-    animation-delay:1s;
-    transition:0.5s;
-}
-
-.herotext .button:hover{
-    border-top-right-radius:30px;
 }
 
 .herotext h2 span.textanim{
@@ -300,15 +310,12 @@ body {
 .wrappersec .sectitle{
     text-align: center;
     color: var(--accent2);
-    font-size: var(--very-large-font-size);
+    font-size: var(--large-font-size);
     font-weight: bold;
     text-shadow: 0 0 20px var(--accent2);
-    transform: translateY(16px);
+    transform: translateY(12px);
+    padding: 10rem 12% 0;
     z-index: 3;
-}
-
-.wrappersec#projsec{
-    transform: translateY(90px);
 }
 
 .aboutme{
@@ -461,7 +468,7 @@ strong{
     display: flex;
     align-items: center;
     justify-content: center;
-    min-height: 100vh;
+    min-height: 80vh;
     padding: 0 35px;
 }
 
@@ -489,7 +496,7 @@ strong{
 
 .projects i{
     position: absolute;
-    background-color: var(--dark);
+    background-color: var(--secondarydark);
     height: 50px;
     width: 50px;
     text-align: center;
@@ -537,7 +544,7 @@ strong{
     scroll-snap-align: start;
     height: 342px;
     list-style: none;
-    background: var(--dark) /*radial-gradient(ellipse farthest-corner at 100% 100%, var(--accent1), var(--dark))*/;
+    background: var(--secondarydark) /*radial-gradient(ellipse farthest-corner at 100% 100%, var(--accent1), var(--dark))*/;
     border-radius: 8px;
     flex-direction: column;
     padding-bottom: 15px;
@@ -578,6 +585,7 @@ strong{
     place-items: center;
     margin-inline: 1.5rem;
     padding-block: 5rem;
+    margin-top: 2rem;
 }
 
 .art .card__container{
@@ -681,14 +689,142 @@ strong{
     }
 }
 
-.footer{
-    background-color: var(--dark);
-    width:100%;
-    height:100vh;
+.contact{
+    background-color: var(--secondarylight);
+    min-height: 100vh;
+    padding: 10rem 12% 10rem;
 }
 
-.footer .source{
-    color: var(--light);
+.contact h1{
+    margin-bottom: 1rem;
+    color: var(--dark);
+    font-size: var(--very-large-font-size);
+    text-align: center;
+}
+
+.contact p{
+    color: var(--accent1);
+    font-size: var(--small-font-size);
+    text-align: center;
+    text-shadow: 0 0 25px var(--accent1);
+}   
+
+.contact form{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap:3rem;
+    margin: 1rem auto;
+    text-align: center;
+}
+
+.contact form .input-box{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.contact form .input-box input,
+.contact form textarea{
+    padding: 2.5rem;
+    width: 100%;
+    font-size: 1.8rem;
+    color: var(--dark);
+    background: var(--light);
+    border-radius: 2rem;
+    border: 2px solid var(--accent1);
+    margin: 1.5rem 0;
+    resize: none;
+}
+
+.contact form .input-box input{
+    min-width: 170px;
+}
+
+.contact form .btn{
+    margin-top: 2rem;
+}
+
+/* Chrome, Safari, Edge, Opera */
+.contact input::-webkit-outer-spin-button,
+.contact input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+.contact input[type=number] {
+  -moz-appearance: textfield;
+}
+
+.footer{
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    padding: 40px 0;
+    background-color: var(--light);
+}
+
+.footer .social{
+    text-align: center;
+    padding-bottom: 25px;
+    color: var(--accent1);
+}
+
+.footer .social a{
+    font-size: var(--medium-font-size);
+    color: var(--accent1);
+    border: 2px solid var(--accent1);
+    width: 42px;
+    height: 42px;
+    line-height: 42px;
+    display: inline-block;
+    text-align: center;
+    border-radius: 50%;
+    margin: 0 10px;
+    transition: 0.3s ease-in-out;
+}
+
+.footer .social a:hover{
+    transform: scale(1.2)translateY(-10px);
+    background-color: var(--accent1);
+    color: var(--dark);
+    box-shadow: 0 0 25px var(--accent1);
+}
+
+.footer ul{
+    margin-top: 0;
+    padding: 0;
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 0;
+    text-align: center;
+}
+
+.footer ul li a{
+    color: var(--dark);
+    border-bottom: 3px solid transparent;
+    transition: 0.3s ease-in-out;
+}
+
+.footer ul li a:hover{
+    border-bottom: 3px solid var(--accent1);
+}
+
+.footer ul li{
+    display:inline-block;
+    padding: 0 15px;
+}
+
+.footer .copyright{
+    margin-top: 50px;
+    text-align: center;
+    font-size: 16px;
+    color: var(--dark)
+} 
+
+.sources a{
+    font-size: var(--small-font-size);
 }
 
 .animappear{
@@ -707,6 +843,12 @@ strong{
 @media (max-width: 992px){
     .header{
         padding: 1.25rem 4%;
+    }
+    .contact form{
+        flex-direction: column;
+    }
+    .footer{
+        padding: 2rem 3%;
     }
 }
 
@@ -752,7 +894,7 @@ strong{
     top: 100%;
     left: 0;
     width: 100%;
-    padding: 0.5rem 4%;
+    padding: 1rem 4%;
     display: none;
   }
   .navbar.active {
@@ -760,18 +902,21 @@ strong{
   }
   .navbar a {
     display: block;
-    margin: 1.5rem 0;
+    margin: 2.5rem 0;
+  }
+  .navbar a:hover{
+    border-bottom: none;
   }
   .navbar button{
-      float:right;
-      margin-top:40px;
+    float:right;
+    margin-top:20px;
   }
   .nav-bg {
     position: absolute;
-    top: 79px;
+    top: 60px;
     left: 0;
     width: 100%;
-    height: 325px;
+    height: 300px;
     background-color: rgba(255,255,255,0.1);
     border-bottom: 2px solid rgba(255, 255, 255, 0.2);
     backdrop-filter: blur(10px);
@@ -791,9 +936,12 @@ strong{
 }
 
 @media (max-width:500px){
+    .sectitle{
+        font-size: 1rem;
+    }
     .hero .face{
         height:auto;
-        width: 80vw;
+        width: 65vw;
     }
     .herotext h1{
         margin-bottom: 4px;
@@ -815,6 +963,16 @@ strong{
     .separator .iconspace{
         max-width: 30%;
         min-height: 5%;
+    }
+    html{
+        font-size: 55%;
+    }
+}
+
+@media (max-width: 441px){
+    .wrappersec{
+        width: 80%;
+        left: 10%;
     }
 }
 
