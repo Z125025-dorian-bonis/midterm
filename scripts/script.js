@@ -12,6 +12,8 @@ const firstCardWidth = carousel.querySelector(".card").offsetWidth;
 const show = document.getElementById('message');
 const bg = document.getElementById("mainback");
 const moon = document.getElementById("moonback");
+const footerheight = document.querySelector("footer").offsetHeight;
+const contactheight = document.querySelector(".contact").offsetHeight;
 
 let phrases = [
     "Game Designer",
@@ -53,7 +55,7 @@ themeSwitch.addEventListener("click", ()=>{
     location.reload();
 });
 
-window.addEventListener('scroll', function(){
+window.addEventListener('scroll', () =>{
     var value = window.scrollY;
     bg.style.top = value * 0.5 + 'px';
     moon.style.left = initialmoonleft - value*0.5 + 'px';
@@ -119,12 +121,12 @@ function typeNextPhrase() {
     }, eraseDuration);
 }
 
-const enableDarkmode = () =>{
+function enableDarkmode(){
     document.body.classList.add('darkmode')
     localStorage.setItem('darkmode', 'active')
 }
 
-const disableDarkmode = () =>{
+function disableDarkmode(){
     document.body.classList.remove('darkmode')
     localStorage.setItem('darkmode', null)
 }
@@ -185,7 +187,7 @@ starback = new Starback(canvas, {
     backgroundColor: dark,
     randomOpacity: true,
     width: window.innerWidth,
-    height: document.documentElement.scrollHeight - window.innerHeight,
+    height: document.documentElement.scrollHeight - contactheight - footerheight,
     starColor: light,
 });
 
