@@ -850,6 +850,24 @@ strong{
     .footer{
         padding: 2rem 3%;
     }
+    .aboutme .card .text{
+        opacity: 1;
+        max-height: 40px;
+    }
+    .aboutme .card .icon{
+        background-position: -120px;
+    }
+    .aboutme .card .bx{
+        background: linear-gradient(90deg, var(--accent1), var(--accent2));
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        opacity: 1;
+    }
+    .aboutme .card{
+        height: 390px;
+        border-radius: 80px;
+        user-select: none;
+    }
 }
 
 @media screen and (max-width: 900px){
