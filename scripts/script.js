@@ -43,18 +43,21 @@ var dark;
 
 /*EVENT LISTENERS*/
 
+/* Responsive navbar icon */
 menuIcon.addEventListener('click', () => {
     menuIcon.classList.toggle('bx-x');
     navbar.classList.toggle('active');
     navbg.classList.toggle('active');
 });
 
+/* Darkmode management */
 themeSwitch.addEventListener("click", ()=>{
     darkmode = localStorage.getItem('darkmode');
     darkmode !== "active" ? enableDarkmode() : disableDarkmode();
     location.reload();
 });
 
+/* Parallax for hero section */
 window.addEventListener('scroll', () =>{
     var value = window.scrollY;
     bg.style.top = value * 0.5 + 'px';
@@ -62,6 +65,7 @@ window.addEventListener('scroll', () =>{
     moon.style.top = initialmoontop + value * 0.4 + 'px';
 });
 
+/* Carousel of Projects section */
 carousel.addEventListener("mousemove", dragging);
 carousel.addEventListener("mousedown", dragStart);
 document.addEventListener("mouseup",dragStop);
@@ -77,6 +81,7 @@ arrowBtns.forEach(btn => {
 
 /*FUNCTIONS*/
 
+/* Direct mouse dragging on carousel */
 function dragging(e){
     if (!isDragging) return;
     carousel.scrollLeft = startScrollLeft - (e.pageX - startX);
@@ -106,6 +111,7 @@ function infiniteScroll(){
     }
 }
 
+/* Typewriter effect on hero section */
 function typeNextPhrase() {
     const nextPhrase = phrases[index];
     el.style.width = "0ch";
@@ -121,6 +127,7 @@ function typeNextPhrase() {
     }, eraseDuration);
 }
 
+/* Darkmode management */
 function enableDarkmode(){
     document.body.classList.add('darkmode')
     localStorage.setItem('darkmode', 'active')
@@ -137,6 +144,7 @@ function disableDarkmode(){
 
 if(darkmode === 'active') enableDarkmode()
 
+/* Exchange light and dark colors for darkmode */
 if(darkmode === 'active'){
     light = getComputedStyle(document.documentElement).getPropertyValue('--light');
     dark = getComputedStyle(document.documentElement).getPropertyValue('--dark');
@@ -145,6 +153,7 @@ if(darkmode === 'active'){
     light = getComputedStyle(document.documentElement).getPropertyValue('--dark');
 }
 
+/* Greet message on hero section */
 if(time > 18){
     greet = 'Good evening!';
 }
@@ -159,8 +168,10 @@ else{
 
 /*INIT OF WEBSITE*/
 
+/* Start typewriter effect */
 typeNextPhrase();
 
+/* Setup of starry background */
 starback = new Starback(canvas, {
     type: 'dot',
     quantity: 1000,
@@ -172,12 +183,15 @@ starback = new Starback(canvas, {
     starColor: light,
 });
 
+/* Shows good morning/afternoon/evening */
 show.textContent = greet;
 
+/* Adds copies of carousel cards on the left */
 carouselChildren.slice(-cardPerView).reverse().forEach(card => {
     carousel.insertAdjacentHTML("afterbegin", card.outerHTML);
 });
 
+/* Adds copies of carousel cards on the right */
 carouselChildren.slice(0, cardPerView).forEach(card => {
     carousel.insertAdjacentHTML("beforeend", card.outerHTML);
 });
