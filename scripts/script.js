@@ -131,8 +131,6 @@ function disableDarkmode(){
     localStorage.setItem('darkmode', null)
 }
 
-window.isMobile = function(){return (window.matchMedia("(any-hover:none)").matches) }
-
 
 
 /*STATE OF WORLD/WEBSITE*/
@@ -145,23 +143,6 @@ if(darkmode === 'active'){
 }else{
     dark = getComputedStyle(document.documentElement).getPropertyValue('--light');
     light = getComputedStyle(document.documentElement).getPropertyValue('--dark');
-}
-
-if(window.isMobile()){
-    for(const elem of document.getElementsByClassName("mobtext")){elem.style.opacity = "1"; elem.style.maxHeight = "40px"; console.log("hey");}
-    for(const elem of document.getElementsByClassName("mobicon")){
-        elem.style.backgroundPosition = "-120px";
-    }
-    for(const elem of document.getElementsByClassName("mobbx")){
-        elem.style.background= "linear-gradient(90deg, var(--accent1), var(--accent2))";
-        elem.style.backgroundClip = "text";
-        elem.style.WebkitTextFillColor = "transparent";
-        elem.style.opacity = "1";
-    }
-    for(const elem of document.getElementsByClassName("card")){
-        elem.style.height="390px";
-        elem.style.borderRadius="80px";
-    }
 }
 
 if(time > 18){
