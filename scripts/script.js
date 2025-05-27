@@ -60,9 +60,11 @@ themeSwitch.addEventListener("click", ()=>{
 /* Parallax for hero section */
 window.addEventListener('scroll', () =>{
     var value = window.scrollY;
-    bg.style.top = value * 0.5 + 'px';
-    moon.style.left = initialmoonleft - value*0.5 + 'px';
-    moon.style.top = initialmoontop + value * 0.4 + 'px';
+    if(value < 800){
+        bg.style.top = value * 0.5 + 'px';
+        moon.style.left = initialmoonleft - value*0.5 + 'px';
+        moon.style.top = initialmoontop + value * 0.4 + 'px';
+    }
 });
 
 /* Carousel of Projects section */
